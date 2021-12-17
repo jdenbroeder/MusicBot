@@ -31,6 +31,12 @@ public class FairQueue<T extends Queueable> {
     
     public int add(T item)
     {
+        list.add(item);
+        return list.size()-1;
+    }
+    
+    public int addFair(T item)
+    {
         int lastIndex;
         for(lastIndex=list.size()-1; lastIndex>-1; lastIndex--)
             if(list.get(lastIndex).getIdentifier()==item.getIdentifier())

@@ -88,6 +88,17 @@ public class AudioHandler extends AudioEventAdapter implements AudioSendHandler
             return queue.add(qtrack);
     }
     
+    public int addFairTrack(QueuedTrack qtrack)
+    {
+        if(audioPlayer.getPlayingTrack()==null)
+        {
+            audioPlayer.playTrack(qtrack.getTrack());
+            return -1;
+        }
+        else
+            return queue.addFair(qtrack);
+    }
+    
     public FairQueue<QueuedTrack> getQueue()
     {
         return queue;
