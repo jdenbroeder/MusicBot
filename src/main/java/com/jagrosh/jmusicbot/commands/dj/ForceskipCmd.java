@@ -26,7 +26,7 @@ import com.jagrosh.jmusicbot.utils.FormatUtil;
  *
  * @author John Grosh <john.a.grosh@gmail.com>
  */
-public class ForceskipCmd extends DJCommand 
+public class ForceskipCmd extends DJCommand
 {
     public ForceskipCmd(Bot bot)
     {
@@ -38,7 +38,7 @@ public class ForceskipCmd extends DJCommand
     }
 
     @Override
-    public void doCommand(CommandEvent event) 
+    public void doCommand(CommandEvent event)
     {
         AudioHandler handler = (AudioHandler)event.getGuild().getAudioManager().getSendingHandler();
         RequestMetadata rm = handler.getRequestMetadata();

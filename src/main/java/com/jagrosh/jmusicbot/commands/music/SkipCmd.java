@@ -26,7 +26,7 @@ import com.jagrosh.jmusicbot.utils.FormatUtil;
  *
  * @author John Grosh <john.a.grosh@gmail.com>
  */
-public class SkipCmd extends MusicCommand 
+public class SkipCmd extends MusicCommand
 {
     public SkipCmd(Bot bot)
     {
@@ -39,7 +39,7 @@ public class SkipCmd extends MusicCommand
     }
 
     @Override
-    public void doCommand(CommandEvent event) 
+    public void doCommand(CommandEvent event)
     {
         AudioHandler handler = (AudioHandler)event.getGuild().getAudioManager().getSendingHandler();
         RequestMetadata rm = handler.getRequestMetadata();
@@ -77,5 +77,5 @@ public class SkipCmd extends MusicCommand
             event.reply(msg);
         }
     }
-    
+
 }
