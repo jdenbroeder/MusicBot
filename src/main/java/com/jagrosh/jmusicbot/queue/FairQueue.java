@@ -29,13 +29,13 @@ public class FairQueue<T extends Queueable> {
     private final List<T> list = new ArrayList<>();
     private final Set<Long> set = new HashSet<>();
     
-    public int add(T item)
+    public int addEnd(T item)
     {
         list.add(item);
         return list.size()-1;
     }
     
-    public int addFair(T item)
+    public int add(T item)
     {
         int lastIndex;
         for(lastIndex=list.size()-1; lastIndex>-1; lastIndex--)

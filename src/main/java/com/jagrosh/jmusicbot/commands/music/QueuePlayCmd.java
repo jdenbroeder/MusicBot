@@ -24,20 +24,20 @@ import com.jagrosh.jmusicbot.commands.music.PlayCmd;
  *
  * @author John Grosh <john.a.grosh@gmail.com>
  */
-public class FairPlayCmd extends PlayCmd
+public class QueuePlayCmd extends PlayCmd
 {
-    public FairPlayCmd(Bot bot)
+    public QueuePlayCmd(Bot bot)
     {
         super(bot);
-        this.name = "fairplay";
+        this.name = "queueplay";
         this.arguments = "<title|URL|subcommand>";
-        this.help = "plays the provided song, but queues it ahead in a round-robin order";
+        this.help = "plays the provided song, or queues it at the end";
         this.aliases = bot.getConfig().getAliases(this.name);
     }
 
     @Override
     protected int addTrack(AudioHandler handler, QueuedTrack track)
     {
-		return handler.addFairTrack(track);
+		return handler.addTrackToEnd(track);
     }
 }

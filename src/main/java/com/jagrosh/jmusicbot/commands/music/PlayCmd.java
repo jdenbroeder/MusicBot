@@ -59,7 +59,6 @@ public class PlayCmd extends MusicCommand
         this.children = new Command[]{new PlaylistCmd(bot)};
     }
     
-    /* FairPlayCmd will override this. */
     protected int addTrack(AudioHandler handler, QueuedTrack track)
     {
 		return handler.addTrack(track);
