@@ -22,6 +22,8 @@ import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.tools.FriendlyException;
 import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
+import com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeHttpContextFilter;
+import com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeHttpContextFilter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -40,6 +42,10 @@ public class PlaylistLoader
     public PlaylistLoader(BotConfig config)
     {
         this.config = config;
+        
+        // set up age restrction workaround from config
+        YoutubeHttpContextFilter.setPAPISID(config.getPapisid());
+        YoutubeHttpContextFilter.setPSID(config.getPsid());
     }
     
     public List<String> getPlaylistNames()
