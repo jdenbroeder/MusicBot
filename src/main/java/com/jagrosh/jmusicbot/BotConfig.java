@@ -39,7 +39,7 @@ public class BotConfig
     private final static String END_TOKEN = "/// END OF JMUSICBOT CONFIG ///";
     
     private Path path = null;
-    private String token, prefix, altprefix, helpWord, playlistsFolder,
+    private String token, papisid, psid, prefix, altprefix, helpWord, playlistsFolder,
             successEmoji, warningEmoji, errorEmoji, loadingEmoji, searchingEmoji;
     private boolean stayInChannel, songInGame, npImages, updatealerts, useEval, dbots;
     private long owner, maxSeconds, aloneTimeUntilStop;
@@ -70,6 +70,8 @@ public class BotConfig
             
             // set values
             token = config.getString("token");
+            papisid = config.getString("papisid");
+            psid = config.getString("psid");
             prefix = config.getString("prefix");
             altprefix = config.getString("altprefix");
             helpWord = config.getString("help");
@@ -112,6 +114,15 @@ public class BotConfig
                 {
                     write = true;
                 }
+            }
+
+            if(papisid==null || papisid.isEmpty())
+            {
+                warn("No PAPISID provided! Age-restricted videos will not work. Continuing.");
+            }
+            if(psid==null || psid.isEmpty())
+            {
+                warn("No PSID provided! Age-restricted videos will not work. Continuing.");
             }
             
             // validate bot owner
@@ -204,6 +215,12 @@ public class BotConfig
         {
             prompt.alert(Prompt.Level.ERROR, "JMusicBot Config", "An error occurred writing the default config file: " + ex.getMessage());
         }
+    }
+
+    private void warn(String msg)
+    {
+        prompt.alert(Prompt.Level.WARNING, CONTEXT, msg + "\nConfig Location: " + path.toAbsolutePath().toString());
+        return;
     }
     
     public boolean isValid()
@@ -348,5 +365,15 @@ public class BotConfig
     public Config getTransforms()
     {
         return transforms;
+    }
+
+    public String getPapisid()
+    {
+        return papisid;
+    }
+
+    public String getPsid()
+    {
+        return psid;
     }
 }

@@ -80,7 +80,7 @@ public class JMusicBot
         if(!config.isValid())
             return;
         LOG.info("Loaded config from " + config.getConfigLocation());
-        
+
         // set up the listener
         EventWaiter waiter = new EventWaiter();
         SettingsManager settings = new SettingsManager();
