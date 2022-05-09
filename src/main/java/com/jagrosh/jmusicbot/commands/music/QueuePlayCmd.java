@@ -31,7 +31,7 @@ public class QueuePlayCmd extends PlayCmd
         super(bot);
         this.name = "queueplay";
         this.arguments = "<title|URL|subcommand>";
-        this.help = "plays the provided song, or queues it at the end";
+        this.help = "plays the provided song at the end of the queue";
         this.aliases = bot.getConfig().getAliases(this.name);
     }
 
