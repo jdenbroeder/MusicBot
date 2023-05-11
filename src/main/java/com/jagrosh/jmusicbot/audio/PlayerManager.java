@@ -39,6 +39,11 @@ public class PlayerManager extends DefaultAudioPlayerManager
     public void init()
     {
         TransformativeAudioSourceManager.createTransforms(bot.getConfig().getTransforms()).forEach(t -> registerSourceManager(t));
+        // hack in Youtube email and password for age-restricted videos
+        // AudioSourceManagers.registerRemoteSources() will add a new YoutubeAudioSourceManager(true, null, null)
+        // hopefully we're first :)
+        // otherwise, we'll need to inline the function here and modify
+        registerSourceManager(new YoutubeAudioSourceManager(true, bot.getConfig().getYtemail(), bot.getConfig().getYtpassword()));
         AudioSourceManagers.registerRemoteSources(this);
         AudioSourceManagers.registerLocalSource(this);
         DuncteBotSources.registerAll(this, "en-US");

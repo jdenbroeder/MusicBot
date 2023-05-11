@@ -39,7 +39,7 @@ public class BotConfig
     private final static String END_TOKEN = "/// END OF JMUSICBOT CONFIG ///";
 
     private Path path = null;
-    private String token, papisid, psid, prefix, altprefix, helpWord, playlistsFolder, logLevel,
+    private String token, ytemail, ytpassword, prefix, altprefix, helpWord, playlistsFolder, logLevel,
             successEmoji, warningEmoji, errorEmoji, loadingEmoji, searchingEmoji;
     private boolean stayInChannel, songInGame, npImages, updatealerts, useEval, dbots;
     private long owner, maxSeconds, aloneTimeUntilStop;
@@ -71,8 +71,8 @@ public class BotConfig
 
             // set values
             token = config.getString("token");
-            papisid = config.getString("papisid");
-            psid = config.getString("psid");
+            ytemail = config.getString("ytemail");
+            ytpassword = config.getString("ytpassword");
             prefix = config.getString("prefix");
             altprefix = config.getString("altprefix");
             helpWord = config.getString("help");
@@ -119,13 +119,13 @@ public class BotConfig
                 }
             }
 
-            if(papisid==null || papisid.isEmpty())
+            if(ytemail==null || ytemail.isEmpty())
             {
-                warn("No PAPISID provided! Age-restricted videos will not work. Continuing.");
+                warn("No Youtube email provided! Age-restricted videos will not work. Continuing.");
             }
-            if(psid==null || psid.isEmpty())
+            if(ytpassword==null || ytpassword.isEmpty())
             {
-                warn("No PSID provided! Age-restricted videos will not work. Continuing.");
+                warn("No Youtube password provided! Age-restricted videos will not work. Continuing.");
             }
 
             // validate bot owner
@@ -385,13 +385,13 @@ public class BotConfig
         return transforms;
     }
 
-    public String getPapisid()
+    public String getYtemail()
     {
-        return papisid;
+        return ytemail;
     }
 
-    public String getPsid()
+    public String getYtpassword()
     {
-        return psid;
+        return ytpassword;
     }
 }
