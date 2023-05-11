@@ -115,15 +115,6 @@ public class BotConfig
                     write = true;
                 }
             }
-
-            if(ytemail==null || ytemail.isEmpty())
-            {
-                warn("No Youtube email provided! Age-restricted videos will not work. Continuing.");
-            }
-            if(ytpassword==null || ytpassword.isEmpty())
-            {
-                warn("No Youtube password provided! Age-restricted videos will not work. Continuing.");
-            }
             
             // validate bot owner
             if(owner<=0)
@@ -215,12 +206,6 @@ public class BotConfig
         {
             prompt.alert(Prompt.Level.ERROR, "JMusicBot Config", "An error occurred writing the default config file: " + ex.getMessage());
         }
-    }
-
-    private void warn(String msg)
-    {
-        prompt.alert(Prompt.Level.WARNING, CONTEXT, msg + "\nConfig Location: " + path.toAbsolutePath().toString());
-        return;
     }
     
     public boolean isValid()
