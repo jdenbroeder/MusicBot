@@ -1,5 +1,15 @@
 <img align="right" src="https://i.imgur.com/zrE80HY.png" height="200" width="200">
 
+## JMusicBot Youtube Age-Restriction Fork
+
+This fork implements the following:
+  * Appending at the end of the playlist (instead of round-robin): !queueplay
+  * Uses [lavaplayer-fork](https://github.com/Walkyst/lavaplayer-fork) for Youtube authentication
+
+For instructions, see the auto-generated config.txt upon first run (after inputting bot key and owner ID).
+
+[Upstream repository](https://github.com/jagrosh/MusicBot)
+
 # JMusicBot
 
 [![Downloads](https://img.shields.io/github/downloads/jagrosh/MusicBot/total.svg)](https://github.com/jagrosh/MusicBot/releases/latest)
