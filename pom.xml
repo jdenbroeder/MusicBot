@@ -25,6 +25,11 @@
                 <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
+        <repository>
+            <id>arbjergDev-snapshots</id>
+            <name>Lavalink Repository</name>
+            <url>https://maven.lavalink.dev/snapshots</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -59,12 +64,17 @@
             <artifactId>lavaplayer-fork</artifactId>
             <version>1.4.1</version>
         </dependency-->
-        <dependency>
+        <!-- <dependency>
             <groupId>dev.arbjerg</groupId>
             <artifactId>lavaplayer</artifactId>
             <version>2.0.0</version>
+        </dependency> -->
+        <dependency>
+            <groupId>dev.arbjerg</groupId>
+            <artifactId>lavaplayer</artifactId>
+            <version>727959e9f621fc457b3a5adafcfffb55fdeaa538-SNAPSHOT</version>
         </dependency>
-        
+
         <!-- this is needed, but isn't actually hosted anywhere anymore... uh -->
         <!--dependency>
             <groupId>com.sedmelluq</groupId>
@@ -153,7 +163,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 </project>
